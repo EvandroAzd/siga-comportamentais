@@ -3,18 +3,18 @@ package siga;
 /** Entidade de domínio. Pronta — não precisa ser alterada nesta atividade. */
 public class Aluno {
 
-    private final String matricula;
+    private final Matricula matricula;
     private final String nome;
-    private boolean bolsista;
+    /*private boolean bolsista;
     private boolean servidor;
-    private boolean egresso;
+    private boolean egresso;*/
 
-    public Aluno(String matricula, String nome) {
+    public Aluno(Matricula matricula, String nome) {
         this.matricula = matricula;
         this.nome = nome;
     }
 
-    public String getMatricula() {
+    public Matricula getMatricula() {
         return matricula;
     }
 
@@ -22,7 +22,7 @@ public class Aluno {
         return nome;
     }
 
-    public boolean isBolsista() {
+  /*  public boolean isBolsista() {
         return bolsista;
     }
 
@@ -44,5 +44,5 @@ public class Aluno {
 
     public void setEgresso(boolean egresso) {
         this.egresso = egresso;
-    }
+    }*/
 }

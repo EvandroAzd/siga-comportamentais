@@ -10,12 +10,14 @@ package siga;
 public class GeradorBoleto {
 
     public double calcularValorDoBoleto(Aluno aluno, double valorBase) {
-        if (aluno.isBolsista()) {
+        return aluno.getMatricula().calcularDesconto(valorBase);
+        /*if (aluno.isBolsista()) {
             return valorBase * 0.50;
         } else if (aluno.isServidor()) {
             return valorBase * 0.80;
         }
-        return valorBase;   // o desconto de egresso nunca chegou aqui
+        return valorBase; */
+        // o desconto de egresso nunca chegou aqui
     }
 
     public void emitir(Aluno aluno, double valorBase) {

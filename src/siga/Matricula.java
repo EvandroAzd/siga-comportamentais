@@ -7,35 +7,43 @@ package siga;
  */
 public class Matricula {
 
-    private final Aluno aluno;
+    //resolvendo problema de acoplamento entre Matricula e Aluno
+    /*private final Aluno aluno;*/
     private final String codigoTurma;
+    private String codigoMatricula;
+    private Desconto desconto;
 
-    public Matricula(Aluno aluno, String codigoTurma) {
-        this.aluno = aluno;
+    public Matricula(String codigoTurma, String codigoMatricula) {
         this.codigoTurma = codigoTurma;
+        this.codigoMatricula = codigoMatricula;
     }
 
-    public Aluno getAluno() {
-        return aluno;
+    public String getCodigoMatricula() {
+        return codigoMatricula;
     }
 
     public String getCodigoTurma() {
         return codigoTurma;
     }
 
-    public double calcularValor(double valorBase) {
-        if (aluno.isBolsista()) {
+    public void setDesconto(Desconto desconto) {
+        this.desconto = desconto;
+    }
+
+    public double calcularDesconto(double valorBase) {
+        return desconto.calcular(valorBase);
+       /* if (aluno.isBolsista()) {
             return valorBase * 0.50;
         } else if (aluno.isServidor()) {
             return valorBase * 0.80;
         } else if (aluno.isEgresso()) {
             return valorBase * 0.90;
         }
-        return valorBase;
+        return valorBase;*/
     }
 
     @Override
     public String toString() {
-        return aluno.getNome() + " em " + codigoTurma;
+        return codigoMatricula + " pertence a turma " + codigoTurma;
     }
 }
